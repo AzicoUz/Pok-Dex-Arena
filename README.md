@@ -1,66 +1,87 @@
-# PokéDex Arena — React 4.1 Music Edition Ultimate
+# ⚡ PokéDex Arena 4.1.1
 
-A polished Pokémon collection + trainer-game frontend built with **React, Vite and PokéAPI**. The project keeps the original Azico branding and expands the 3.x release into a multi-mode game dashboard.
+<p align="center">
+  <strong>A modern Pokémon game platform built with React, Vite and PokéAPI.</strong>
+</p>
 
-## 4.1 systems
-- Dashboard / Trainer HQ
-- 151 Kanto Pokémon with local cache
-- Pokédex 2.0: search, type/collection filters, sorting, favorites, live species data, abilities, habitat, egg groups and moves
-- 6-slot Team Builder with drag & drop
-- 6v6 Arena with moves, PP, type effectiveness, STAB, critical hits, status effects, switching, field healing and a 3-minute timer
-- Wild Zone catch loop with Poké Ball / Great Ball / Ultra Ball
-- Inventory deck with capture and healing supplies
-- Evolution Lab using live evolution-chain data
-- Regions hub with generation roadmap
-- Mini Games: Type Guess, silhouette quiz, Quick Quiz and Reaction Rush
-- Trainer profile, XP, levels, battle history, streaks and achievements
-- Dark / Light / OLED themes
-- Floating background music player powered by the Audius API: trending tracks, play/pause, previous/next, seek, volume, genre filter, refresh and minimized mode
-- Browser-side Audius API key field in Settings (optional) and VITE_AUDIUS_API_KEY support
-- Responsive UI and reduced-motion support
-- Persistent state through localStorage
+<p align="center">
+  <em>Crafted by Azico</em>
+</p>
 
-## Run
+---
 
-```bash
-npm install
-npm run dev
-```
+## 🎮 About
 
-Production build:
+**PokéDex Arena** is a modern, interactive Pokémon platform designed to combine a complete Pokédex experience with team building, battles, Pokémon catching, evolution, mini-games, trainer progression and more.
 
-```bash
-npm run build
-```
+The project is built with **React + Vite** and uses the **PokéAPI** to retrieve Pokémon data dynamically.
 
-## Music API
+> ⚡ Version: **4.1.1 — Azico Edition**
 
-Background music uses Audius as the streaming catalog. The current Audius API exposes track search/trending and a stream endpoint; most read-only endpoints can work without credentials, while an API key can be used for higher rate limits. API keys are documented as safe for frontend use; bearer tokens must not be exposed in browser code.
+---
 
-For local development you can either paste an API key in **Settings → Background music** or place it in `.env` as `VITE_AUDIUS_API_KEY`. The player respects browser autoplay rules, so the first audible playback may require a user gesture.
+## ✨ Features
 
-## Data
+### 🏠 Dashboard
 
-Pokémon data is loaded from the public PokéAPI REST service. The first 151 Pokémon are cached in localStorage so repeat visits can avoid downloading the same collection again. Move/species/evolution requests are cached in memory during a session.
+- Trainer dashboard
+- XP and level progression
+- Battle statistics
+- Collection progress
+- Recent activity
+- Quick access to major game modes
 
-## Notes
+### 📖 Pokédex
 
-Battle calculations, capture probability and some trainer/gameplay rules are **frontend simulation mechanics**. They are intentionally simplified and are not a claim of exact main-series Pokémon battle formulas.
+- 151 Pokémon
+- Pokémon search
+- Type filtering
+- Favorites
+- Caught / uncaught tracking
+- Sorting by different statistics
+- Pokémon details
+- Base stats
+- Abilities
+- Moves
+- Species information
+- Habitat information
+- Evolution information
 
-## Creator
+### ⚔️ Battle Arena
 
-**Designed & built by Azico**
+- 6 vs 6 battles
+- Turn-based combat
+- Pokémon switching
+- Move selection
+- Move PP
+- Type effectiveness
+- STAB
+- Critical hits
+- Status effects
+- HP system
+- Battle log
+- Battle animations
+- Victory / defeat system
+- XP rewards
+- Win / loss statistics
 
+### 🎒 Inventory
 
-## 4.1.1 stability fix
+Manage useful trainer items such as:
 
-This patch fixes a development-time blank-screen race caused by React StrictMode running effects twice. An aborted first PokéAPI request could previously set the loading state to false while the second request was still loading, leaving the Dashboard with an empty Pokémon array.
+- Poké Balls
+- Great Balls
+- Ultra Balls
+- Potions
+- Super Potions
+- Battle items
 
-The loader now tracks the active request and ignores stale progress/error/finally updates. The Dashboard also has a safe empty-data state, and a global Error Boundary shows a recovery screen instead of a completely blank page if an unexpected render error occurs.
+### 🐾 Wild Pokémon
 
-### Run locally
-```bash
-npm install
-npm run dev
-```
-Open the exact local URL shown by Vite, normally `http://localhost:5173/`. If the terminal is already serving an older copy, stop it with `Ctrl+C`, make sure you are in this project folder, then run `npm run dev` again.
+Encounter Pokémon in the wild and attempt to capture them.
+
+```text
+A wild Pokémon appeared!
+
+[ Throw Poké Ball ]
+[ Run ]
